@@ -1,7 +1,7 @@
 import './App.css';
 
 function App() {
-  const a=1+1
+  const a=1+1*2
 
   return (
     <div className="App">
