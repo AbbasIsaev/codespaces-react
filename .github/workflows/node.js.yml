@@ -36,12 +36,19 @@ jobs:
       with:
         name: build-files
         path: build
-    
-    - name: Build zip project # This would actually build your project, using zip for an example artifact
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: build-files
+    - name: Build zip # This would actually build your project, using zip for an example artifact
       run: |
-        zip -r build-zip ./build/*
         ls
-        echo ${{ github.run_number }}
+        zip -r build-zip ./build/*
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
