@@ -60,7 +60,7 @@ jobs:
       with:
         tag_name: ${{ github.run_number }}
         release_name: Release ${{ github.run_number }}
-        body_path: ./README.md
+        # body_path: ./README.md
         # body: |
         #  Changes in this Release
         #  - First Change
