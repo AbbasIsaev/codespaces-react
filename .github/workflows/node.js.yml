@@ -51,7 +51,7 @@ jobs:
       run: |
         tar xvf artifact.tar
         ls -R
-        zip -r -j build-zip .
+        zip -r build-zip .
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
