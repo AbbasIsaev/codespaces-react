@@ -44,13 +44,14 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: build-files
+        name: build-files        
     - name: Display structure of downloaded files
       run: ls -R
     - name: Build zip # This would actually build your project, using zip for an example artifact
       run: |
+        tar xvf artifact.tar
         ls
-        zip -r -j build-zip ./build/*
+        zip -r -j build-zip ./artifact/*
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
